@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+
+:root {
+    --bg-color: #809DF2;
+    --top-color: #F0F1F2;
+    --selection: #686868;
+    --secoundary: #eeeeee;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: var(--top-color);
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.links a {
+    color: var(--bg-color);
+    text-decoration: none;
+    font-size: 22px;
+    position: relative;
+}
+
+.links a:hover {
+    color: #040DBF;
+}
+
+.links a + a {
+    margin-left: 50px;
+}
+
+.links a::after {
+    content: "";
+    background-color: #040DBF;
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.links a:hover::after {
+    width: 100%;
+    transition: width 250ms ease-in-out;
+}
+
+.card {
+    background-color: var(--top-color);
+    width: 800px;
+    min-height: 500px;
+    margin: 36px auto;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr;
+    box-shadow: 5px 4px 6px rgba(0, 0, 0, 0.3);
+    animation: up 1s ease-in-out;
+}
+
+@keyframes up {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.details {
+    padding: 32px;
+    color: #3071F2;
+    letter-spacing: 0.7px;
+}
+
+.item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.details h3 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.details .item:nth-child(9) {
+    border: none
+}
+
+.item div:first-child {
+    margin-top: 4px;
+    padding-top: 5px;
+    font-size: 14px;
+}
+
+.item div:last-child {
+    color: var(--selection);
+    font-size: 18px;
+    margin-top: 4px;
+}
+
+.details span {
+    display: inline-block;
+    color: var(--top-color);
+    background-color: #040DBF;
+    margin-top: 5px;
+    padding: 4px 16px;
+    border-radius: 15px;
+}
+
+/* ===== CREATE ======================================= */
+
+input, select {
+    outline: none;
+    padding: 8px 8px;
+    margin-top: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #809df21e;
+}
+
+.card .item input[type="text"] {
+    width: 96%;
+}
+
+.card .item input[type="checkbox"] {
+    margin-top: 20px;
+}
+
+.card .item input[type="checkbox"]:last-of-type {
+    margin-left: 20px;
+}
+
+button {
+    margin: 10px auto 0;
+    padding: 8px 0;
+    color: var(--top-color);
+    background-color: #040DBF;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 15px;
+}

@@ -1,0 +1,67 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card">
+    
+    <section class="avatar" style="background: url(https://source.unsplash.com/collection/489203/500x500) no-repeat center center / cover"></section>
+    
+    <form class="details">
+        
+        <h3>New Teacher</h3>
+
+        <div class="item">
+            <div>Profile picture</div>
+            <input type="text" name="profile_url" placeholder="http://">
+        </div>
+
+        <div class="item">
+            <div>Name</div>
+            <input type="text" name="name" placeholder="Teacher's name">
+        </div>
+
+        <div class="item">
+            <div>Birth Date</div>
+            <input type="date" name="birth">
+        </div>
+
+        <div class="item">
+            <div>Gender</div>
+            <span><input type="radio" name="gender" value="M" checked>Male</span>
+            <span><input type="radio" name="gender" value="F">Female</span>
+        </div>
+
+        <div class="item">
+            <div>Degree</div>
+            <select name="degree" required>
+                <option value="">Select degree</option>
+                <option value="high_school">High school</option>
+                <option value="undergraduation">Undergraduation</option>
+                <option value="master">Master's degree</option>
+                <option value="doctorate">Doctorate</option>
+            </select>
+        </div>
+
+         <div class="item">
+            <div>Specialization</div>
+            <input type="text" name="specialization" placeholder="Name your specialization">
+        </div>
+
+        <div class="item">
+            <div>Subjects</div>
+            <input type="text" name="subjects" placeholder="Subjects separated by coma">
+        </div>
+
+        <div class="item">
+            <div>Class type</div>
+            <input type="checkbox" name="class_type" id="presential">Presential
+            <input type="checkbox" name="class_type" id="remote">Online
+        </div>
+
+        <button type="submit" value="POST">Register</button>
+
+    </form>
+
+</div>
+
+{% endblock content %}
