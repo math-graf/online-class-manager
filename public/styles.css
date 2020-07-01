@@ -94,7 +94,7 @@ header {
     font-weight: bold;
 }
 
-.details .item:nth-child(9) {
+.details .item:last-child {
     border: none
 }
 
@@ -144,7 +144,8 @@ input, select {
     margin-left: 20px;
 }
 
-button {
+button, 
+.details a {
     margin: 10px auto 0;
     padding: 8px 0;
     color: var(--top-color);
@@ -152,4 +153,12 @@ button {
     width: 100%;
     font-size: 18px;
     border-radius: 15px;
+}
+
+.details a {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
 }

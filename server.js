@@ -4,6 +4,7 @@ const nunjucks = require('nunjucks')
 
 const server = express()
 
+server.use(express.urlencoded({ extended: true })) // responsável por mostrar os dados de formulário no req.body
 server.use(express.static('public'))
 server.use(routes)
 

@@ -1,0 +1,99 @@
+<div class="item">
+    <div>Profile picture</div>
+    <input type="text" name="profile_url" placeholder="http://" value="{{teacher.profile_url}}">
+</div>
+
+<div class="item">
+    <div>Name</div>
+    <input type="text" name="name" placeholder="Teacher's name" value="{{teacher.name}}">
+</div>
+
+<div class="item">
+    <div>Birth Date</div>
+    <input type="date" name="birth" value="{{teacher.birth}}">
+</div>
+
+<div class="item">
+    <div>Gender</div>
+    <span>
+        <input 
+            type="radio" 
+            name="gender" 
+            value="M"
+            {%if teacher.gender == "M"%}
+            checked
+            {%endif%}
+        >Male
+    </span>
+    <span>
+        <input 
+            type="radio" 
+            name="gender" 
+            value="F"
+            {%if teacher.gender == "F"%}
+            checked
+            {%endif%}
+        >Female
+    </span>
+</div>
+
+<div class="item">
+    <div>Degree</div>
+    <select name="degree" required>
+        <option value="">Select degree</option>
+        <option value="High School" 
+        {% if teacher.degree == "High School" %}
+        selected
+        {% endif %}
+        >High school</option>
+        <option value="Undergraduate"
+        {% if teacher.degree == "Undergraduate" %}
+        selected
+        {% endif %}
+        >Undergraduation</option>
+        <option value="Master"
+        {% if teacher.degree == "Master" %}
+        selected
+        {% endif %}
+        >Master's degree</option>
+        <option value="Doctor"
+        {% if teacher.degree == "Doctor" %}
+        selected
+        {% endif %}
+        >Doctorate</option>
+    </select>
+</div>
+
+    <div class="item">
+    <div>Specialization</div>
+    <input type="text" name="specialization" placeholder="Name your specialization" value="{{teacher.specialization}}">
+</div>
+
+<div class="item">
+    <div>Subjects</div>
+    <input type="text" name="subjects" placeholder="Subjects separated by coma" value="{{teacher.subjects}}">
+</div>
+
+<div class="item">
+    <div>Class type</div>
+    <input 
+        type="checkbox" 
+        name="class_type" 
+        id="presential" 
+        value="Presential"
+        {% if teacher.class_type.indexOf("Presential") != -1 %}
+        checked
+        {% endif %}
+    >Presential
+    <input 
+        type="checkbox" 
+        name="class_type" 
+        id="remote" 
+        value="Online"
+        {% if teacher.class_type.indexOf("Online") != -1 %}
+        checked
+        {% endif %}
+    >Online
+</div>
+
+<button type="submit">Register</button>
