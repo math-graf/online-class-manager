@@ -1,42 +1,30 @@
-/*
-let subject = "biologia, nuke"
+const req = { id: 1, nome: 'Matheus', idade: 30 }
 
-let subjectVector = subject.split(',')
+let data = {
+    array: [
+        { id: 1, nome: 'Matheus', idade: 28 },
+        { id: 2, nome: 'Patrícia', idade: 25 },
+        { id: 3, nome: 'Selso', idade: 66 },
+        { id: 4, nome: 'Lena', idade: 61 }
+    ]
+}
 
-const subjectVectorTrimmed = function() {
-    let newVector = []
-    for (item of subjectVector) {
-        newVector.push(item.trim())
+const { id } = req
+
+let index = 0
+
+const foundId = data.array.find(function(pessoa, foundIndex) {
+    if (pessoa.id == id) {
+        index = foundIndex
+        return true
     }
-    return newVector
+})
+
+const objeto = {
+    ...foundId,
+    ...req
 }
 
-console.log(subjectVectorTrimmed())
-console.log(subjectVector)
-*/
-/*
-const time = 672883200000
+data.array[index] = objeto
 
-const today = new Date()
-const birthDay = new Date(time)
-
-let age = today.getFullYear() - birthDay.getFullYear()
-const month = today.getMonth() - birthDay.getMonth()
-const day = today.getDate() - birthDay.getDate()
-
-if (month < 0 || month == 0 && day < 0) {
-    age -= 1
-}
-
-return age
-*/
-
-const array = [1, 2, 3, 10]
-
-const number = 4
-
-console.log(array.indexOf(number))
-
-if (!array.indexOf(number)) {
-    console.log('false')
-}
+console.log(data)

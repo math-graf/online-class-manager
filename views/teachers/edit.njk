@@ -6,13 +6,26 @@
     
     <section class="avatar" style="background: url(https://source.unsplash.com/collection/489203/500x500) no-repeat center center / cover"></section>
     
-    <section class="details">
+    <div class="details">
         
-        <h3>Edit Profile</h3>
+    
+        <form id="form-put" method="post" action="/teachers?_method=PUT">
+            
+            <h3>Edit Profile</h3>
 
-        {%include 'teachers/fields.njk'%}
+            {%include 'teachers/fields.njk'%}
 
-    </section>
+            <input type="hidden" name="id" value="{{teacher.id}}">
+
+        </form>
+
+        <form id="form-delete" method="post" action="/teachers?_method=DELETE">
+            <input type="hidden" name="id" value="{{teacher.id}}">
+            <button type="submit">Delete</button>
+        </form>
+        
+    </div>
+
 
 </div>
 

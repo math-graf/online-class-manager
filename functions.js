@@ -41,5 +41,18 @@ module.exports = {
         const day = `0${date.getDate()}`.slice(-2)
 
         return `${year}-${month}-${day}`
+    },
+    classes: function(type) {
+        let newVector = []
+
+        if (typeof type == 'string') {
+            const subjectsSplitted = type.split(',')
+        
+            for (item of subjectsSplitted) {
+                newVector.push(item.trim())
+            }
+            
+            return newVector
+        } else return type
     }
 }

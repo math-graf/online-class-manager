@@ -144,6 +144,10 @@ input, select {
     margin-left: 20px;
 }
 
+.details #form-put div.item:last-of-type {
+    border: none;
+}
+
 button, 
 .details a {
     margin: 10px auto 0;
@@ -153,6 +157,7 @@ button,
     width: 100%;
     font-size: 18px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .details a {
@@ -160,5 +165,9 @@ button,
     box-sizing: border-box;
     text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
+}
+
+#form-delete button {
+    background-color: crimson;
+    cursor: pointer;
 }

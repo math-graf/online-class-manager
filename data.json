@@ -1,18 +1,6 @@
 {
   "teachers": [
     {
-      "id": 1,
-      "profile_url": "https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
-      "name": "Rose Parkers",
-      "birth": 672883200000,
-      "gender": "F",
-      "degree": "Master",
-      "specialization": "Biology",
-      "subjects": "Microbiology, Human biology",
-      "class_type": [ "Presential" ],
-      "created_at": 1593567919927
-    },
-    {
       "id": 2,
       "profile_url": "https://images.unsplash.com/photo-1548449112-96a38a643324?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
       "name": "Tyler Durden",
