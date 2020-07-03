@@ -2,53 +2,30 @@
 
 {% block content %}
 
-<div class="card">
+<div class="card table-card">
     
-    <section class="avatar" style="background: url(https://source.unsplash.com/collection/489203/500x500) no-repeat center center / cover"></section>
-    
-    <section class="details">
-        
-        <h3>Detalhes</h3>
-
-        <div class="item">
-            <div>Nome</div>
-            <div>João Guilherme</div>
-        </div>
-
-        <div class="item">
-            <div>Idade</div>
-            <div>37 anos</div>
-        </div>
-
-        <div class="item">
-            <div>Grau de escolaridade</div>
-            <div>Doutorado</div>
-        </div>
-
-         <div class="item">
-            <div>Especialização</div>
-            <div>Química</div>
-        </div>
-
-        <div class="item">
-            <div>Tipo de aula</div>
-            <div>Presencial</div>
-        </div>
-
-        <div class="item">
-            <div>Acompanhamento</div>
-            <div>
-                <span>Química orgânica</span>
-                <span>Química analítica</span>
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Data de início</div>
-            <div>25/03/2019</div>
-        </div>
-
-    </section>
+    <table width="100%">
+        <thead>
+            <tr>
+                <th>Teacher</th>
+                <th>Subjects</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td><span style="background-image: url({{teacher.profile_url}})"></span>{{teacher.name}}</td>
+                <td class="subject">
+                    {% for subject in teacher.subjects %}
+                        <span>{{ subject }}</span>
+                    {% endfor %}
+                </td>
+                <td><a href="/teachers/{{teacher.id}}">Check</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 </div>
 

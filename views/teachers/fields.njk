@@ -81,18 +81,22 @@
         name="class_type" 
         id="presential" 
         value="Presential"
-        {% if teacher.class_type.indexOf("Presential") != -1 %}
-        checked
-        {% endif %}
+        {% for type in teacher.class_type %}
+            {% if type == "Presential" %}
+            checked
+            {% endif %}
+        {% endfor %}
     >Presential
     <input 
         type="checkbox" 
         name="class_type" 
         id="remote" 
         value="Online"
-        {% if teacher.class_type.indexOf("Online") != -1 %}
-        checked
-        {% endif %}
+        {% for type in teacher.class_type %}
+            {% if type == "Online" %}
+            checked
+            {% endif %}
+        {% endfor %}
     >Online
 </div>
 

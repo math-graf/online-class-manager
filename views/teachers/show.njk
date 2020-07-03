@@ -8,37 +8,37 @@
     
     <section class="details">
         
-        <h3>Detalhes</h3>
+        <h3>Details</h3>
 
         <div class="item">
-            <div>Nome</div>
+            <div>Name</div>
             <div>{{teacher.name}}</div>
         </div>
 
         <div class="item">
-            <div>Idade</div>
+            <div>Age</div>
             <div>{{teacher.age}} years</div>
         </div>
 
         <div class="item">
-            <div>Grau de escolaridade</div>
+            <div>Degree</div>
             <div>{{teacher.degree}}</div>
         </div>
 
          <div class="item">
-            <div>Especialização</div>
+            <div>Specialization</div>
             <div>{{teacher.specialization}}</div>
         </div>
 
         <div class="item">
-            <div>Tipo de classe</div>
+            <div>Class Type</div>
             {%for type in teacher.class_type%}
                 <span>{{type}}</span>
             {%endfor%}
         </div>
 
         <div class="item">
-            <div>Acompanhamento</div>
+            <div>Subjects</div>
             <div>
                 {%for subject in teacher.subjects%}
                     <span>{{subject}}</span>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="item">
-            <div>Data de início</div>
+            <div>Since</div>
             <div>{{teacher.created_at}}</div>
         </div>
 

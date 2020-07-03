@@ -1,3 +1,5 @@
+/*
+
 const req = { id: 1, nome: 'Matheus', idade: 30 }
 
 let data = {
@@ -28,3 +30,41 @@ const objeto = {
 data.array[index] = objeto
 
 console.log(data)
+
+======================================================
+
+const data = require('./data.json')
+
+const teachersList = data.teachers
+
+for (teacher of teachersList) {
+    const vectorizedSubjects = teacher.subjects.split(',')
+    let newVector = []
+    
+    for (item of vectorizedSubjects) {
+        newVector.push(item.trim())
+    }
+
+    teacher.subjects = newVector
+}
+
+console.log(teachersList)
+
+*/
+
+/* ======================================================== */
+
+let string = ["Presential"]
+
+if (typeof string == 'string') {
+    let newVector = []
+    const subjectsSplitted = string.split(',')
+    
+    for (item of subjectsSplitted) {
+        newVector.push(item.trim())
+    }
+    
+    string = newVector
+}
+
+console.log(newVector)

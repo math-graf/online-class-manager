@@ -56,6 +56,11 @@ header {
     transition: width 250ms ease-in-out;
 }
 
+.links a.active {
+    color: #040DBF;
+    font-weight: bold;
+}
+
 .card {
     background-color: var(--top-color);
     width: 800px;
@@ -132,7 +137,7 @@ input, select {
     background-color: #809df21e;
 }
 
-.card .item input[type="text"] {
+.card .item input[type="text"], input[type="email"] {
     width: 96%;
 }
 
@@ -170,4 +175,66 @@ button,
 #form-delete button {
     background-color: crimson;
     cursor: pointer;
+}
+
+/* ================= INDEX =============== */
+
+.table-card {
+    display: block;
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.table-card thead tr th {
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--bg-color);
+}
+
+.table-card thead tr th:last-child {
+    text-align: center;
+}
+
+.table-card tbody td {
+    border-bottom: 1px solid #d9d9d9;
+    padding: 16px;
+}
+
+.table-card tbody td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+.table-card tbody td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 3px 1px 6px -4px black;
+}
+
+.subject span {
+    background-color: #040DBF;
+    color: white;
+    padding: 4px 16px;
+    border-radius: 15px;
+}
+
+.table-card tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-card tbody tr td:last-child {
+    text-align: center;
+}
+
+.table-card tbody tr td a {
+    background-color: #040DBF;
+    color: white;
+    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 15px;
 }

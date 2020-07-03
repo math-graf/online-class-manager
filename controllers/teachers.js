@@ -1,6 +1,22 @@
 const fs = require('fs')
-const data = require('./data.json')
-const { subjects, age, date, birthDate, classes } = require('./functions')
+const data = require('../data.json')
+const { subjects, age, date, birthDate, classes } = require('../functions')
+
+exports.index = function(req, res) {
+    const teachers = data.teachers.map(function(teacher){
+        const spreadTeacher = {
+            ...teacher,
+            subjects: teacher.subjects.split(',')
+        }
+        return spreadTeacher
+    })
+    
+    return res.render('teachers/index', { teachers: teachers })
+}
+
+exports.create = function(req, res) {
+    return res.render('teachers/create')
+}
 
 exports.post = function(req, res) {
     const keys = Object.keys(req.body)
@@ -13,7 +29,13 @@ exports.post = function(req, res) {
 
     let { profile_url, name, birth, gender, degree, specialization, subjects, class_type } = req.body
 
-    const id = Number(data.teachers.length + 1)
+    let id = 1
+    const lastTeacher = data.teachers[data.teachers.length - 1]
+
+    if (lastTeacher) {
+        id += lastTeacher.id
+    }
+    
     const created_at = Date.now()
     birth = Date.parse(req.body.birth)
 
@@ -64,11 +86,12 @@ exports.edit = function(req, res) {
         return teacher.id == id
     })
 
-    if (!foundTeacher) return res.render('Teacher not found!')
+    if (!foundTeacher) return res.send('Teacher not found!')
 
     const teacher = {
         ...foundTeacher,
-        birth: birthDate(foundTeacher.birth)
+        birth: birthDate(foundTeacher.birth),
+        class_type: classes(foundTeacher.class_type)
     }
 
     return res.render('teachers/edit', { teacher })
