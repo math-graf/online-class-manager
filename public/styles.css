@@ -63,7 +63,7 @@ header {
 
 .card {
     background-color: var(--top-color);
-    width: 800px;
+    width: 1000px;
     min-height: 500px;
     margin: 36px auto;
     display: grid;
@@ -237,4 +237,66 @@ button,
     text-decoration: none;
     padding: 4px 12px;
     border-radius: 15px;
+}
+
+/*======== CARD HEADER ==============*/
+
+.table-card .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+.table-card .header a {
+    color: var(--top-color);
+    background-color: #040DBF;
+    width: 68px;
+    padding: 8px 16px;
+    border-radius: 15px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.table-card .header form {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+}
+
+.table-card .header input {
+    margin: 0 10px 0 0;
+}
+
+.table-card .header button {
+    margin: 0;
+}
+
+/* =================== PAGINATION ================== */
+
+.table-card {
+    display: grid;
+    grid-template: 64px 1fr 16px / 1fr;
+}
+
+.table-card .header {
+    margin: 0;
+    align-self: start;
+}
+
+.table-card .pagination {
+    margin: 0;
+    align-self: end;
+    justify-self: center;
+}
+
+.pagination a,
+.pagination span {
+    margin: 0 8px;
+    text-decoration: none;
+    color: #040DBF;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid #040DBF;
 }

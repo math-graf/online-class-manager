@@ -1,0 +1,91 @@
+<div class="item">
+    <div>Profile picture</div>
+    <input type="text" name="profile_url" placeholder="http://" value="{{student.profile_url}}">
+</div>
+
+<div class="item">
+    <div>Name</div>
+    <input type="text" name="name" placeholder="Student's name" value="{{student.name}}">
+</div>
+
+<div class="item">
+    <div>E-mail</div>
+    <input type="email" name="email" value="{{student.email}}">
+</div>
+
+<div class="item">
+    <div>Birth Date</div>
+    <input type="date" name="birth" value="{{student.birth}}">
+</div>
+
+<div class="item">
+    <div>Gender</div>
+    <span>
+        <input 
+            type="radio" 
+            name="gender" 
+            value="M"
+            {%if student.gender == "M"%}
+            checked
+            {%endif%}
+        >Male
+    </span>
+    <span>
+        <input 
+            type="radio" 
+            name="gender" 
+            value="F"
+            {%if student.gender == "F"%}
+            checked
+            {%endif%}
+        >Female
+    </span>
+</div>
+
+<div class="item">
+    <div>Grade</div>
+    <select name="grade" required>
+        <option value="">Select grade</option>
+        <option value="5th" {% if student.grade == "5th" %}selected{% endif %}>
+            5th grade - Elementary School
+        </option>
+        <option value="6th" {% if student.grade == "6th" %}selected{% endif %}>
+            6th grade - Middle School
+        </option>
+        <option value="7th" {% if student.grade == "7th" %}selected{% endif %}>
+            6th grade - Middle School
+        </option>
+        <option value="8th" {% if student.grade == "8th" %}selected{% endif %}>
+            8th grade - Middle School
+        </option>
+        <option value="9th" {% if student.grade == "9th" %}selected{% endif %}>
+            9th grade - High School
+        </option>
+        <option value="10th" {% if student.grade == "10th" %}selected{% endif %}>
+            10th grade - High School
+        </option>
+        <option value="11th" {% if student.grade == "11th" %}selected{% endif %}>
+            11th grade - High School
+        </option>
+        <option value="12th" {% if student.grade == "12th" %}selected{% endif %}>
+            12th grade - High School
+        </option>
+    </select>
+</div>
+
+<div class="item">
+    <div>Teacher</div>
+    <select name="teacher_id" required>
+        <option value="">Select teacher</option>
+        {% for teacher in teacherOptions %}
+        <option value="{{teacher.id}}">{{teacher.name}}</option>
+        {% endfor %}
+    </select>
+</div>
+
+<div class="item">
+    <div>Weekly Schedule (hours)</div>
+    <input type="number" min="0" max="30" name="time" value="{{student.time}}">
+</div>
+
+<button type="submit">Register</button>

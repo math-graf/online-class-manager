@@ -54,6 +54,7 @@ console.log(teachersList)
 
 /* ======================================================== */
 
+/*
 let string = ["Presential"]
 
 if (typeof string == 'string') {
@@ -68,3 +69,31 @@ if (typeof string == 'string') {
 }
 
 console.log(newVector)
+*/
+
+
+/* ========== PAGINATION ================ */
+
+/*
+let totalPages = 20,
+    currentPage = 6,
+    allPages = [],
+    oldPage
+
+for (let page = 1; page <= totalPages; page++) {
+
+    const firstAndLastPages = page == 1 || page == totalPages
+    const pagesAroundCurrentPage = page >= (currentPage - 2) && page <= (currentPage + 2)
+
+    if (firstAndLastPages || pagesAroundCurrentPage) {
+        if (oldPage && page - oldPage > 2) {
+            allPages.push('...')
+        } else if (oldPage && page - oldPage == 2) {
+            allPages.push(page - 1)
+        }
+        allPages.push(page)
+        oldPage = page
+    }
+}
+console.log(allPages)
+*/
